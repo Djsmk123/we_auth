@@ -33,7 +33,7 @@ class AuthRepoImpl extends AuthRepo {
     if (res.$1 != null) {
       return (res.$1, null);
     }
-    accessToken = res.$2?.data['access_token'];
+    accessToken = res.$2?.data['token'];
     JsonObjectUtils<Usermodel> utils = JsonObjectUtils<Usermodel>();
     (Failure?, Usermodel?) obj =
         utils.jsonToObject(() => Usermodel.fromJson(res.$2!.data['user']));

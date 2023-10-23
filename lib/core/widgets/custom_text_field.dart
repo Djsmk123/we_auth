@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 
 import '../utils/color_config.dart';
 
@@ -36,12 +37,23 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.labelText,
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              widget.labelText,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.sp),
+            ),
+            if (widget.keyboardType == TextInputType.visiblePassword &&
+                !widget.obscureText)
+              Lottie.asset(
+                'assets/eye.json',
+                height: 50.h,
+              ),
+          ],
         ),
         SizedBox(
           height: 10.h,

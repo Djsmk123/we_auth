@@ -3,7 +3,6 @@ import 'package:assignment/core/utils/color_config.dart';
 import 'package:assignment/core/widgets/bouncing_widget.dart';
 import 'package:assignment/core/widgets/custom_text_field.dart';
 import 'package:assignment/core/widgets/rounded_button.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -125,22 +124,17 @@ class _AuthticationPageState extends State<AuthticationPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
-                          child: Stack(
-                            children: [
-
-                              CustomTextField(
-                                  controller: nameController,
-                                  keyboardType: TextInputType.name,
-                                  labelText: "Full Name",
-                                  validator: (value) {
-                                    if (!isLogin && value!.isEmpty) {
-                                      return "Name is Required";
-                                    }
-                                    return null;
-                                  },
-                                  hintText: "Name"),
-                            ],
-                          ),
+                          child: CustomTextField(
+                              controller: nameController,
+                              keyboardType: TextInputType.name,
+                              labelText: "Full Name",
+                              validator: (value) {
+                                if (!isLogin && value!.isEmpty) {
+                                  return "Name is Required";
+                                }
+                                return null;
+                              },
+                              hintText: "Name"),
                         ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
