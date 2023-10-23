@@ -1,11 +1,10 @@
 import 'package:assignment/Features/Authentication/Data/models/usermodel.dart';
 import 'package:assignment/Features/Authentication/Data/source/auth_repo_impl.dart';
-import 'package:auto_route/annotations.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../get_init.dart';
 
-@RoutePage(name: "HomePage")
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 

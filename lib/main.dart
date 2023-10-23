@@ -1,7 +1,7 @@
 import 'package:assignment/Features/Authentication/Presentations/Bloc/login/login_bloc.dart';
 import 'package:assignment/Features/SplashScreen/Bloc/splash_bloc.dart';
+import 'package:assignment/Features/SplashScreen/Page/Views/splash_screen.dart';
 import 'package:assignment/core/utils/theme.dart';
-import 'package:assignment/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,9 +13,6 @@ Future<void> main() async {
   await di.setUp();
   runApp(const MyApp());
 }
-
-//....................................APP Router  ................................
-final appRouter = AppRouter();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,11 +31,10 @@ class MyApp extends StatelessWidget {
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 800),
-        child: MaterialApp.router(
+        child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.data,
-          routerDelegate: appRouter.delegate(),
-          routeInformationParser: appRouter.defaultRouteParser(),
+          home: const SplashScreen(),
         ),
       ),
     );

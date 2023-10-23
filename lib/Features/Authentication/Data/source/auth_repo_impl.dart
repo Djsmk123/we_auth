@@ -20,7 +20,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<(Failure?, Usermodel?)> signIn(
       String username, String password) async {
-    final res = await networkServiceImpl.post(endpoint: '/login', data: {
+    final res = await networkServiceImpl.post(endpoint: '/login-user', data: {
       'email': "$username@gmail.com",
       'password': password,
       'fcm_token': ""
@@ -51,7 +51,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<(Failure?, Usermodel?)> signUp(
       String username, String password, String name) async {
-    final res = await networkServiceImpl.post(endpoint: '/signup', data: {
+    final res = await networkServiceImpl.post(endpoint: '/create-user', data: {
       'email': "$username@gmail.com",
       'password': password,
       'name': name,

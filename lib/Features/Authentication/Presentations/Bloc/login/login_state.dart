@@ -32,7 +32,6 @@ class LoginSuccess extends LoginState {
   const LoginSuccess({required this.state});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [state];
 }
 

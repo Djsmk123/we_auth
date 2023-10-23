@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:assignment/Features/Authentication/Data/source/auth_repo_impl.dart';
 import 'package:assignment/Features/Authentication/Presentations/Bloc/login/login_bloc.dart';
 import 'package:assignment/core/Network/network.dart';
